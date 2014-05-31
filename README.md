@@ -13,8 +13,8 @@ Run
 
 Test
 ====
-  `curl http://localhost:8080/echo`
-  `curl "http://localhost:8080/echo?echo=Something+To+Echo"`
+  * `curl http://localhost:8080/echo`
+  * `curl "http://localhost:8080/echo?echo=Something+To+Echo"`
 
 Development Environment
 =======================
