@@ -5,11 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>uk.co.devsoup</groupId>
-    <artifactId>SimpleDropWizardEcho</artifactId>
-    <version>1.0.1</version>
+    <artifactId>AwsFileStorage</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
 
     <properties>
         <dropwizard.version>0.7.0</dropwizard.version>
+        <jackson.version>2.3.3</jackson.version>
     </properties>
 
     <dependencies>
@@ -17,6 +18,32 @@
             <groupId>io.dropwizard</groupId>
             <artifactId>dropwizard-core</artifactId>
             <version>${dropwizard.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk</artifactId>
+            <version>1.7.12</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>
+        <!-- needed as AWS has an older version than DropWizard -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${jackson.version}</version>
         </dependency>
     </dependencies>
 
@@ -51,7 +78,7 @@
                                         implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>uk.co.devsoup.simpledropwizardecho.SimpleDropWizardEchoApplication
+                                    <mainClass>uk.co.devsoup.awsfilestorage.AwsFileStorageApplication
                                     </mainClass>
                                 </transformer>
                             </transformers>

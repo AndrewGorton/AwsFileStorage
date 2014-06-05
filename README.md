@@ -1,7 +1,7 @@
-SimpleDropWizardEcho
+AwsFileStorage
 ====================
 
-A simple dropwizard.io echo service for use with testing.
+Simple DropWizard microservice for accessing AWS-backed storage.
 
 Compile
 =======
@@ -9,12 +9,23 @@ Compile
 
 Run
 ===
-  `java -jar target/SimpleDropWizardEcho-1.0-SNAPSHOT.jar server`
+Create a file with the following contents
+
+```
+#!/bin/bash
+
+export AWS_ACCESS_KEY=<your_access_key_goes_here>
+export AWS_SECRET_ACCESS_KEY=<your_secret_access_key_goes_here>
+export AWSFILESTORAGE_BUCKET=<a_bucket_you_control>
+
+java -jar target/AwsFileStorage-1.0.0-SNAPSHOT.jar server
+```
 
 Test
 ====
-  * `curl http://localhost:8080/echo`
-  * `curl "http://localhost:8080/echo?echo=Something+To+Echo"`
+  * `curl http://localhost:8080/awsfilestorage`
+  * `curl http://localhost:8080/awsfilestorage/some/path/here`
+
 
 Development Environment
 =======================
