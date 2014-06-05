@@ -3,7 +3,6 @@ package uk.co.devsoup.awsfilestorage;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
-
 import uk.co.devsoup.awsfilestorage.configuration.AwsFileStorageConfiguration;
 import uk.co.devsoup.awsfilestorage.resources.AwsFileStorageResource;
 
@@ -22,5 +21,6 @@ public class AwsFileStorageApplication extends Application<AwsFileStorageConfigu
                     Environment environment) {
         final AwsFileStorageResource resource = new AwsFileStorageResource();
         environment.jersey().register(resource);
+        environment.jersey().register(com.sun.jersey.multipart.impl.MultiPartReaderServerSide.class);
     }
 }

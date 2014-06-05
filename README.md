@@ -23,8 +23,9 @@ java -jar target/AwsFileStorage-1.0.0-SNAPSHOT.jar server
 
 Test
 ====
-  * `curl http://localhost:8080/awsfilestorage`
-  * `curl http://localhost:8080/awsfilestorage/some/path/here`
+  * `curl -v -F file=@source.jpg http://localhost:8080/awsfilestorage/a.jpg`
+  * `curl -v http://localhost:8080/awsfilestorage/`
+  * `curl -v -X DELETE http://localhost:8080/awsfilestorage/a`
 
 
 Development Environment
