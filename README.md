@@ -18,7 +18,7 @@ export AWS_ACCESS_KEY=<your_access_key_goes_here>
 export AWS_SECRET_ACCESS_KEY=<your_secret_access_key_goes_here>
 export AWSFILESTORAGE_BUCKET=<a_bucket_you_control>
 
-java -jar target/AwsFileStorage-1.0.0-SNAPSHOT.jar server
+mvn package && java -jar target/AwsFileStorage-1.0.0.jar server
 ```
 
 Test
